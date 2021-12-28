@@ -1,0 +1,2 @@
+class ArticleGroup < ApplicationRecord
+end
