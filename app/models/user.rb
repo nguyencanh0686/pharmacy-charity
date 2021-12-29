@@ -7,4 +7,5 @@ class User < ApplicationRecord
   belongs_to :individual
 
   delegate :full_name, to: :individual
+  delegate :dob, to: :individual
 end

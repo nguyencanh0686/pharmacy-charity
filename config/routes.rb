@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       namespace :entities do
         resources :ingredients
       end
+
+      namespace :users do
+        resources :registrations, only: [:create]
+      end
     end
   end
 end

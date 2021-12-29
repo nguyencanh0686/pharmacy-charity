@@ -5,29 +5,52 @@ RSpec.describe UserServices::RegisterUserService do
     let(:city) {create :city, national: national}
     let(:params) {
       {
-        "username": "FrankNguyen",
-        "full_name": "Frank Nguyen",
-        "email": "franknguyen@gmail.com",
-        "phone_number": "+84932925767",
-        "password": "12345@Ab",
-        "city_id": city.id
+        "individual": {
+          "full_name": "Frank Nguyen",
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "address": "Luy Ban Bich - Hoa Thanh",
+          "city_id": city.id
+        },
+        "user": {
+          "username": "FrankNguyen",
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "password": "12345@Ab",
+        }
       }
     }
 
-    let(:missing_phone_number) {
+    let(:wrong_individual_params) {
       {
-        "full_name": "Frank Nguyen",
-        "email": "franknguyen@gmail.com",
-        "city_id": city.id
+        "individual": {
+          "full_name": "Frank Nguyen",
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "address": "Luy Ban Bich - Hoa Thanh"
+        },
+        "user": {
+          "username": "FrankNguyen",
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "password": "12345@Ab",
+        }
       }
     }
-
-    let(:missing_username) {
+    let(:wrong_user_params) {
       {
-        "full_name": "Frank Nguyen",
-        "email": "franknguyen@gmail.com",
-        "phone_number": "+84932925767",
-        "city_id": city.id
+        "individual": {
+          "full_name": "Frank Nguyen",
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "address": "Luy Ban Bich - Hoa Thanh",
+          "city_id": city.id
+        },
+        "user": {
+          "email": "franknguyen@gmail.com",
+          "phone_number": "+84932925767",
+          "password": "12345@Ab",
+        }
       }
     }
 
@@ -39,15 +62,16 @@ RSpec.describe UserServices::RegisterUserService do
     end
 
     context "test create a new user fail " do
-      subject(:missing_phone_number_object) { UserServices::RegisterUserService.create(missing_phone_number)}
-      subject(:missing_username_object) { UserServices::RegisterUserService.create(missing_username)}
+      subject(:wrong_individual) { UserServices::RegisterUserService.create(wrong_individual_params)}
 
       it "raise an exception - invalid entity" do
-        expect {missing_phone_number_object}.to raise_error(Dry::Struct::Error)
+        expect {wrong_individual}.to raise_error(::ExceptionHandler::Validation)
       end
 
-      it "raise an exception - invalid user" do
-        expect {missing_username_object}.to raise_error(Dry::Struct::Error)
+      subject(:wrong_user) { UserServices::RegisterUserService.create(wrong_user_params)}
+
+      it "raise an exception - invalid entity" do
+        expect {wrong_user}.to raise_error(::ExceptionHandler::Validation)
       end
     end
 
