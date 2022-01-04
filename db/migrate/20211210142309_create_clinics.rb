@@ -7,7 +7,7 @@ class CreateClinics < ActiveRecord::Migration[6.0]
       t.references  :district
       t.text        :description
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

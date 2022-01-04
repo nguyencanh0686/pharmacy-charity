@@ -7,7 +7,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.text        :body
       t.references  :individual,  type: :uuid
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

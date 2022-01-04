@@ -62,3 +62,4 @@ gem 'dry-validation', '~> 1.6'
 gem 'dry-struct'
 gem 'jwt'
 gem 'rubocop', require: false
+gem 'aasm', '>=4.12.3'

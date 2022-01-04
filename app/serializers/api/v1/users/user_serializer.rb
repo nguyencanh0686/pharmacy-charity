@@ -4,10 +4,8 @@ module Api
       include JSONAPI::Serializer
       attributes    :id,
                     :full_name,
-                    :dob
-      attribute :full_address do
-
-      end
+                    :dob,
+                    :full_address
     end
   end
 end

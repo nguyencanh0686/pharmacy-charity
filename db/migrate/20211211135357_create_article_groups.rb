@@ -4,7 +4,7 @@ class CreateArticleGroups < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean   :blocked
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

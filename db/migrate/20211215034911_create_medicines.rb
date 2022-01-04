@@ -9,7 +9,7 @@ class CreateMedicines < ActiveRecord::Migration[6.0]
       t.jsonb       :ingredients
       t.uuid        :created_by, index: true
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

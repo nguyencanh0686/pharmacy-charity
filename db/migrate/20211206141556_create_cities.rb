@@ -3,7 +3,7 @@ class CreateCities < ActiveRecord::Migration[6.0]
     create_table :cities, id: :bigint do |t|
       t.string      :name
       t.references  :national
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
 
       t.timestamps
     end

@@ -10,5 +10,8 @@ module UserServices
       end
     end
 
+    def self.show(id)
+
+    end
   end
 end

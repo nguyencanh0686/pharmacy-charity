@@ -7,7 +7,7 @@ class CreateOrganizations < ActiveRecord::Migration[6.0]
       t.references  :city
       t.references  :district
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

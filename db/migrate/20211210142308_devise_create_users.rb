@@ -38,7 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       t.timestamps null: false
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
     end
 
     add_index :users, :reset_password_token, unique: true

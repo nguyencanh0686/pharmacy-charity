@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_072125) do
+ActiveRecord::Schema.define(version: 2022_01_03_131047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,17 @@ ActiveRecord::Schema.define(version: 2021_12_28_072125) do
     t.index ["deleted_at"], name: "index_user_roles_on_deleted_at"
     t.index ["expired"], name: "index_user_roles_on_expired"
     t.index ["user_id"], name: "index_user_roles_on_user_id"
+  end
+
+  create_table "user_tokens", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id"
+    t.string "token"
+    t.datetime "expired_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_user_tokens_on_created_at"
+    t.index ["token"], name: "index_user_tokens_on_token"
+    t.index ["user_id"], name: "index_user_tokens_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

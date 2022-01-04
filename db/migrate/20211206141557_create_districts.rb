@@ -4,7 +4,7 @@ class CreateDistricts < ActiveRecord::Migration[6.0]
       t.string   :name
       t.references :city
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

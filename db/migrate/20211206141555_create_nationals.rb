@@ -3,7 +3,7 @@ class CreateNationals < ActiveRecord::Migration[6.0]
     create_table :nationals, id: :bigint do |t|
       t.string   :name
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

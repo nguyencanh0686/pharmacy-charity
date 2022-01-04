@@ -5,7 +5,7 @@ class CreateOrganizationOfficers < ActiveRecord::Migration[6.0]
       t.references   :organization, type: :uuid
       t.string       :role_name
 
-      t.datetime    :deleted_at
+      t.datetime    :deleted_at, index: true
       t.timestamps
     end
   end

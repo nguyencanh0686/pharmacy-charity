@@ -5,7 +5,22 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :individual
+  has_many :user_roles
 
   delegate :full_name, to: :individual
   delegate :dob, to: :individual
+  delegate :full_address, to: :individual
+
+  scope :by_login, ->(login){
+    where("UPPER(username) = UPPER(:login) OR UPPER(phone_number) = UPPER(:login)", login: login)
+  }
+
+  scope :active_only, ->{
+    where(deleted_at: nil)
+  }
+
+  scope :activated, -> {
+    where("COALESCE(phone_confirmed_at, email_confirmed_at) IS NOT NULL")
+  }
+
 end
