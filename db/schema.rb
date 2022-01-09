@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_article_groups_on_deleted_at"
   end
 
   create_table "articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_group_id"], name: "index_articles_on_article_group_id"
+    t.index ["deleted_at"], name: "index_articles_on_deleted_at"
     t.index ["individual_id"], name: "index_articles_on_individual_id"
   end
 
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_cities_on_deleted_at"
     t.index ["national_id"], name: "index_cities_on_national_id"
   end
 
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_clinics_on_city_id"
+    t.index ["deleted_at"], name: "index_clinics_on_deleted_at"
     t.index ["district_id"], name: "index_clinics_on_district_id"
   end
 
@@ -65,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_districts_on_city_id"
+    t.index ["deleted_at"], name: "index_districts_on_deleted_at"
   end
 
   create_table "individuals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -80,6 +85,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_individuals_on_city_id"
+    t.index ["deleted_at"], name: "index_individuals_on_deleted_at"
     t.index ["district_id"], name: "index_individuals_on_district_id"
     t.index ["id_number"], name: "index_individuals_on_id_number"
   end
@@ -114,6 +120,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["created_by"], name: "index_medicines_on_created_by"
+    t.index ["deleted_at"], name: "index_medicines_on_deleted_at"
     t.index ["sort_name"], name: "index_medicines_on_sort_name"
   end
 
@@ -122,6 +129,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_nationals_on_deleted_at"
   end
 
   create_table "organization_officers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -131,6 +139,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_organization_officers_on_deleted_at"
     t.index ["individual_id"], name: "index_organization_officers_on_individual_id"
     t.index ["organization_id"], name: "index_organization_officers_on_organization_id"
   end
@@ -145,6 +154,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_organizations_on_city_id"
+    t.index ["deleted_at"], name: "index_organizations_on_deleted_at"
     t.index ["district_id"], name: "index_organizations_on_district_id"
   end
 
@@ -163,12 +173,13 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
 
   create_table "user_tokens", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id"
-    t.string "token"
+    t.string "device_ip"
     t.datetime "expired_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["created_at"], name: "index_user_tokens_on_created_at"
-    t.index ["token"], name: "index_user_tokens_on_token"
+    t.index ["device_ip"], name: "index_user_tokens_on_device_ip"
+    t.index ["expired_at"], name: "index_user_tokens_on_expired_at"
     t.index ["user_id"], name: "index_user_tokens_on_user_id"
   end
 
@@ -197,6 +208,7 @@ ActiveRecord::Schema.define(version: 2022_01_03_131047) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true, where: "(deleted_at IS NULL)"
     t.index ["individual_id"], name: "index_users_on_individual_id"
     t.index ["phone_number"], name: "index_users_on_phone_number", unique: true, where: "(deleted_at IS NULL)"

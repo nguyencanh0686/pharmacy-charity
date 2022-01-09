@@ -13,24 +13,23 @@ module Auth
           && @current_token.expired_at > Time.zone.now \
           && @current_token.device_ip = decoded_auth_token[:device_ip]
 
-      @current_user ||= @current_token.user
+      @current_account ||= @current_token.user
       raise(
         ExceptionHandler::InvalidToken,
         ("#{I18n.t('authentication.invalid_token')} #{e.message}")
-      ) unless @current_user
-      @current_token.update_column(expired_at: Time.zone.now + TOKEN_EXPIRED_IN)
-      @current_user, @current_token
+      ) unless @current_account
+
+      return @current_account, @current_token
     end
 
-    private
-    attr_reader :auth_token, :current_user
 
+    private
     def decoded_auth_token
       @decoded_auth_token ||= JsonWebToken.decode(http_auth_header)
     end
 
     def http_auth_header
-      return auth_token if auth_token.present?
+      return @auth_token if @auth_token.present?
       raise(ExceptionHandler::MissingToken, I18n.t('authentication.missing_token'))
     end
   end

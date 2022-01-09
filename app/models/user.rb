@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   belongs_to :individual
   has_many :user_roles
+  has_many :user_tokens
 
   delegate :full_name, to: :individual
   delegate :dob, to: :individual
@@ -20,7 +21,7 @@ class User < ApplicationRecord
   }
 
   scope :activated, -> {
-    where("COALESCE(phone_confirmed_at, email_confirmed_at) IS NOT NULL")
+    where("confirmed_at IS NOT NULL")
   }
 
 end

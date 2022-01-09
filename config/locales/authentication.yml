@@ -1,0 +1,7 @@
+en:
+  authentication:
+    invalid_credentials: Login information is invalid
+    invalid_token: Invalid token!
+    missing_token: Missing token!
+    unauthorized: Unauthorized request!
+    expired_token: Sorry, your token has expired. Please login to continue.

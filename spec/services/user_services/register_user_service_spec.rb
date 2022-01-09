@@ -74,6 +74,5 @@ RSpec.describe UserServices::RegisterUserService do
         expect {wrong_user}.to raise_error(::ExceptionHandler::Validation)
       end
     end
-
   end
 end

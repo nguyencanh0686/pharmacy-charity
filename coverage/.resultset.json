@@ -1,19 +1,38 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/spec/models/user_spec.rb": {
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/spec/services/auth/token_authenticate_service_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          null,
+          3,
+          3,
           null,
           1,
           1,
           1,
+          null,
+          1,
           1,
           1,
           null,
+          null,
+          null,
+          1,
           2,
           2,
+          1,
           2,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -231,6 +250,11 @@
           null,
           null,
           null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/config/initializers/constants.rb": {
+        "lines": [
+          1
         ]
       },
       "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/config/initializers/cors.rb": {
@@ -642,7 +666,7 @@
           1,
           1,
           1,
-          1,
+          3,
           null,
           null
         ]
@@ -661,7 +685,7 @@
           1,
           1,
           1,
-          1,
+          3,
           null,
           null
         ]
@@ -670,10 +694,10 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          1,
+          3,
+          3,
+          3,
+          3,
           1,
           1,
           null,
@@ -705,7 +729,7 @@
         "lines": [
           1,
           1,
-          1,
+          3,
           null,
           null
         ]
@@ -743,12 +767,26 @@
           null
         ]
       },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/spec/factories/user_tokens.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/spec/factories/users.rb": {
         "lines": [
           1,
           1,
           1,
-          1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           1,
@@ -772,10 +810,22 @@
           null,
           1,
           1,
+          1,
           null,
           1,
           1,
           1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
           null,
           null,
           null
@@ -868,18 +918,101 @@
           null,
           null,
           null,
+          null,
           1,
           1,
           1,
           null,
           null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/token_authenticate_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/base.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           3,
           null,
           null,
-          1,
-          3,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/authenticate_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/national.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/city.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/district.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -905,16 +1038,229 @@
           null
         ]
       },
-      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/user_role.rb": {
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/standard.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
           1,
           1,
           null,
           null
         ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/queries/user_queries/authentication_query.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/user_role.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/models/user_token.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/json_web_token.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/services/auth/jwt_token_request.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          0,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          0,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          3,
+          null,
+          null,
+          1,
+          2,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nguyencanh/workspace/pharmacy/pharmacy-charity/app/controllers/concerns/exception_handler.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1641201988
+    "timestamp": 1641743923
   }
 }

@@ -8,6 +8,7 @@ RSpec.configure do |config|
     individuals
     organizations
     users
+    user_tokens
   ].freeze
 
   config.before(:suite) do
